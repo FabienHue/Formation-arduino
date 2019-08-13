@@ -1,26 +1,18 @@
-#ifndef Voiture_h
-#define Voiture_h
+#ifndef NomLibrairie_h
+#define NomLibrairie_h
 
 #include "Arduino.h"
 
-class Voiture
+class NomLibrairie
 {
   public:
-    Voiture(String nomvoiture, String couleurvoiture, int vit);
-    void Allumer();
-    void Eteindre();
-    void setVitesse(float vit);
-    void setCouleur(String couleurvoiture);
-    void setNom(String nomvoiture);
-    String getNom();
-    int getAnnee();
-    float getVitesse();
+    NomLibrairie(boolean argument1, int argument2);
+    void Methode1();
+    float Methode2(String argument3);
   private:
-    String Nom;
-    int Annee;
-    String Couleur;
-    boolean Allumage;
-    float Vitesse;
+    boolean attribut1;
+    int attribut2;
+    String attribut3;
 };
 #endif
 

@@ -1,30 +1,18 @@
 #include "Arduino.h"
-#include "Voiture.h"
+#include "NomLibrairie.h"
 
-Voiture::Voiture(String nomvoiture, String couleurvoiture, int vit){
-  Nom = nomvoiture;
-  Couleur = couleurvoiture;
-  Vitesse = vit;
+NomLibrairie::NomLibrairie(boolean argument1, int argument2){
+  Attribut1 = argument1;
+  Attribut2 = argument2;
 }
 
-void Voiture::setVitesse(float vit){
-  Vitesse = vit;
+void NomLibrairie::Methode1(){
+  Serial.println("Methode1");
 }
 
-void Voiture::setCouleur(String couleur){
-  Couleur = couleur;
-}
-
-void Voiture::setNom(String nomvoiture){
-  Nom = nomvoiture;
-}
-
-String Voiture::getNom(){
-  return Nom;
-}
-
-float Voiture::getVitesse(){
-  return Vitesse;
+float NomLibrairie::Methode2(String argument3){
+  Attribut3 = argument3;
+  return 5;
 }
 
 
