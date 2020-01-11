@@ -1,17 +1,23 @@
-#include "dht.h"
+#include "DHT.h"
 
-int pin = 2; //Capteur connecté à la broche digitale 2
+#define DHTPIN 2  
+#define DHTTYPE DHT22
 
-dht DHT;
+DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
   Serial.begin(9600);
+  dht.begin();
 }
 
 void loop() {
-  DHT.read22(pin);
-  Serial.print(DHT.temperature);//Afficher la température
-  Serial.print(" ");
-  Serial.println(DHT.humidity); //Afficher l'humidité
-  delay(250); //4 mesures par seconde max
+  delay(1000);
+  float h = dht.readHumidity();//humidité
+  float t = dht.readTemperature();//température
+  Serial.print("Humidity: ");
+  Serial.print(h);
+  Serial.print("%  Temperature: ");
+  Serial.print(t);
+  Serial.println("°C ");
+
 }
